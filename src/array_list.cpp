@@ -73,12 +73,11 @@ namespace itis {
 
     Element ArrayList::Remove(int index) {
         internal::check_out_of_range(index, 0, size_);
-
         // Tip 1: можете использовать std::copy для сдвига элементов влево
         // Tip 2: не забудьте задать значение Element::UNINITIALIZED освободившейся ячейке
         // напишите свой код здесь ...
         Element ph = data_[index];
-        std::copy(&data_[index + 1], &data_[size_], &data_[index]);
+        std::copy(&data_[index + 1], &data_[size_ + 1], &data_[index]);
         data_[size_] = Element::UNINITIALIZED;
         size_--;
         return ph;
