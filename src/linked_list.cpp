@@ -8,10 +8,21 @@
 namespace itis {
 
 void LinkedList::Add(Element e) {
+
   // Tip 1: создайте узел в куче со переданным значением
   // Tip 2: есть 2 случая - список пустой и непустой
   // Tip 3: не забудьте обновить поля head и tail
   // напишите свой код здесь ...
+
+    Node* node = new Node(e, nullptr);
+
+    if (head_ == nullptr){
+        assert(tail_ == nullptr && size_ == 0);
+    head_ = node;
+    tail_ = node;
+    } else {
+
+    }
 }
 
 void LinkedList::Insert(int index, Element e) {
@@ -61,7 +72,14 @@ Node *LinkedList::find_node(int index) const {
   assert(index >= 0 && index < size_);
   // Tip 1: можете сразу обработать случаи поиска начала и конца списка
   // напишите свой код здесь ...
-  return {};
+  int counter = 0;
+  for (Node* current_node = head_; current_node != nullptr; current_node = current_node -> next){
+      if (counter == index){
+          return current_node;
+      }
+      counter++;
+  }
+  return nullptr;
 }
 
 // РЕАЛИЗОВАНО
