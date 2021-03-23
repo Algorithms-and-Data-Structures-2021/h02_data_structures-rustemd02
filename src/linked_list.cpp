@@ -68,10 +68,10 @@ namespace itis {
         // Tip 1: люди в черном (MIB) пришли стереть вам память
         // напишите свой код здесь ...
 
-        for (Node *current_node = head_; current_node != nullptr; current_node = current_node->next) {
+        /*for (Node *current_node = head_; current_node != nullptr; current_node = current_node->next) {
             current_node = nullptr;
         }
-        size_ = 0;
+        size_ = 0;*/
 
     }
 
